@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Folder Include="ViewModel\Helpers\" />
+    <Folder Include="ViewModel\ValueConverters\" />
   </ItemGroup>
 
   <ItemGroup>
