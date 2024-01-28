@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Windows;
 using WeatherAppWPF.Model;
+using WeatherAppWPF.ViewModel.Commands;
 using WeatherAppWPF.ViewModel.Helpers;
 
 namespace WeatherAppWPF.ViewModel;
@@ -43,6 +44,8 @@ public class WeatherVM : INotifyPropertyChanged
         }
     }
 
+    public SearchCommand SearchCommand { get; set; }
+
     public WeatherVM()
     {
         if (DesignerProperties.GetIsInDesignMode(new DependencyObject()))
@@ -64,6 +67,8 @@ public class WeatherVM : INotifyPropertyChanged
                 }
             };
         }
+
+        SearchCommand = new SearchCommand(this);
     }
 
     public async void MakeQuery()
